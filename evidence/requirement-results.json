@@ -1,0 +1,107 @@
+{
+  "schema_version": "appfactory.requirement_results.v1",
+  "requirement_results": [
+    {
+      "requirement_id": "REQ-CRUD-001",
+      "status": "pass",
+      "evidence": [
+        "CreateQuestView",
+        "EditQuestView",
+        "EditClueView",
+        "SafariLogView delete confirmation",
+        "SafariStore create/update/delete APIs"
+      ]
+    },
+    {
+      "requirement_id": "REQ-PERSIST-001",
+      "status": "pass",
+      "evidence": [
+        "SafariStore JSON archive in Application Support",
+        "SafariStoreTests testCustomQuestPersistsAndReloads"
+      ]
+    },
+    {
+      "requirement_id": "REQ-VIS-001",
+      "status": "pass",
+      "evidence": [
+        "ChalkCard",
+        "ProgressBeads",
+        "SidewalkIllustration",
+        "BadgeStrip"
+      ]
+    },
+    {
+      "requirement_id": "REQ-EMPTY-001",
+      "status": "pass",
+      "evidence": [
+        "EmptyQuestShelf",
+        "Safari Log ContentUnavailableView",
+        "Premium unavailable recovery"
+      ]
+    },
+    {
+      "requirement_id": "REQ-ERROR-001",
+      "status": "pass",
+      "evidence": [
+        "simulate next save failure",
+        "saveErrorMessage retry copy",
+        "delete confirmation dialog",
+        "StoreKit unavailable recovery"
+      ]
+    },
+    {
+      "requirement_id": "REQ-PRIVACY-001",
+      "status": "pass",
+      "evidence": [
+        "Onboarding local-only copy",
+        "Find Moment Privacy Notice",
+        "no upload/network code"
+      ]
+    },
+    {
+      "requirement_id": "REQ-PREMIUM-001",
+      "status": "pass",
+      "evidence": [
+        "PremiumPreviewView",
+        "PremiumEntitlementCache unavailable",
+        "purchase not claimed before StoreKit confirmation"
+      ]
+    }
+  ],
+  "design_results": [
+    {
+      "gate": "page_count",
+      "status": "pass",
+      "evidence": "Onboarding, Quest Picker, Quest Run, Find Moment, Safari Log, Premium Preview"
+    },
+    {
+      "gate": "domain_words_en_us",
+      "status": "pass",
+      "evidence": "Quest, Clue Tile, Find Moment, Safari Log appear in UI copy"
+    },
+    {
+      "gate": "visual_treatment",
+      "status": "pass",
+      "evidence": "chalk cards, progress beads, empty sidewalk illustration, badge strip"
+    },
+    {
+      "gate": "accessibility",
+      "status": "pass",
+      "evidence": "labels for onboarding, quest cards, clue tile, badges, save/delete controls"
+    },
+    {
+      "gate": "privacy",
+      "status": "pass",
+      "evidence": "local-only starter content, no live community cache/tracking/AI claims"
+    }
+  ],
+  "implemented_requirement_ids": [
+    "REQ-CRUD-001",
+    "REQ-PERSIST-001",
+    "REQ-VIS-001",
+    "REQ-EMPTY-001",
+    "REQ-ERROR-001",
+    "REQ-PRIVACY-001",
+    "REQ-PREMIUM-001"
+  ]
+}

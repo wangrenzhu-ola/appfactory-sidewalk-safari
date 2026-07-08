@@ -1,0 +1,13 @@
+{
+  "schema_version": "appfactory.ios_package_manifest.v1",
+  "app_name": "Sidewalk Safari",
+  "bundle_id": "com.appfactory.sidewalksafari",
+  "locale_lock": "en-US",
+  "platform": "native_iOS_swiftui",
+  "minimum_ios": "17.0",
+  "required_skill_refs": ["build-ios-apps", "test-xcode", "swiftui-ui-patterns", "swiftui-view-refactor", "taste-skill"],
+  "sample_data_only": false,
+  "static_ui_only": false,
+  "implemented_with_real_interaction": true,
+  "persistence_implemented": true
+}

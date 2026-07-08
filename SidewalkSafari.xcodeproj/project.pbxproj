@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FADA7DAFEEBE2262862E891 /* SafariLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD94E5D1D60886E41BF1A07 /* SafariLogView.swift */; };
+		3C01326640B40ABCEB03C499 /* SafariStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D5D9355D3B8D305EE317ED /* SafariStore.swift */; };
+		45F10983E1B076209216FE24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DD1284EF4DE44B63E1C859 /* Assets.xcassets */; };
+		491BE9F83441B22F61EE346D /* SafariStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2C6D216FCC5E3648EA1B75 /* SafariStyle.swift */; };
+		55A829FACD0066FC7625A495 /* PremiumPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D22129AE389E0B7649D09E /* PremiumPreviewView.swift */; };
+		620301C5AEE1E1B894153065 /* SidewalkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31087712D661BAACE89554C7 /* SidewalkModels.swift */; };
+		7659D6AC6BC13A7CBD0BD318 /* SafariRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03320978011A4E1EF3705D32 /* SafariRootView.swift */; };
+		80568B2FE865CB9706F6F595 /* QuestRunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1079866879FE26027B29BCB2 /* QuestRunView.swift */; };
+		A5C706FDB67FD700A74A91B4 /* SafariFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20648618321CDC963B0FB88F /* SafariFixtures.swift */; };
+		AA619F352D637605AE8A5789 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9FA0414B816DE84ABC58F86 /* Foundation.framework */; };
+		B54F2699E8BE01B8C55CDD43 /* SidewalkSafariApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77FC53F0AB71349E548979 /* SidewalkSafariApp.swift */; };
+		B64C8326805E33DA1614BF0C /* SafariStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86081206B00CFABBC62B789F /* SafariStoreTests.swift */; };
+		DE0BCC1547EC15E380A0B4B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9FA0414B816DE84ABC58F86 /* Foundation.framework */; };
+		E24836EA7B7A328911475247 /* QuestPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B27D7D2F90BFDA6377E753A /* QuestPickerView.swift */; };
+		FD94B746A7673EBD4FC76FEE /* FindMomentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D3E410058C8DCDAC05E166 /* FindMomentView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3B04A07B7F1341AE49A35FDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7772FD26886C37DF75A7D968 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2755DD9CE60E3AE993668B7A;
+			remoteInfo = SidewalkSafari;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03320978011A4E1EF3705D32 /* SafariRootView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SafariRootView.swift; sourceTree = "<group>"; };
+		1079866879FE26027B29BCB2 /* QuestRunView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuestRunView.swift; sourceTree = "<group>"; };
+		20648618321CDC963B0FB88F /* SafariFixtures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SafariFixtures.swift; sourceTree = "<group>"; };
+		23C37140EB22E70FDDCB7B67 /* SidewalkSafariTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SidewalkSafariTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26DD1284EF4DE44B63E1C859 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		30D3E410058C8DCDAC05E166 /* FindMomentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FindMomentView.swift; sourceTree = "<group>"; };
+		31087712D661BAACE89554C7 /* SidewalkModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SidewalkModels.swift; sourceTree = "<group>"; };
+		35D22129AE389E0B7649D09E /* PremiumPreviewView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PremiumPreviewView.swift; sourceTree = "<group>"; };
+		3B27D7D2F90BFDA6377E753A /* QuestPickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuestPickerView.swift; sourceTree = "<group>"; };
+		5A2C6D216FCC5E3648EA1B75 /* SafariStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SafariStyle.swift; sourceTree = "<group>"; };
+		5BD94E5D1D60886E41BF1A07 /* SafariLogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SafariLogView.swift; sourceTree = "<group>"; };
+		5F77FC53F0AB71349E548979 /* SidewalkSafariApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SidewalkSafariApp.swift; sourceTree = "<group>"; };
+		61D5D9355D3B8D305EE317ED /* SafariStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SafariStore.swift; sourceTree = "<group>"; };
+		86081206B00CFABBC62B789F /* SafariStoreTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SafariStoreTests.swift; sourceTree = "<group>"; };
+		976622DF3373813017CCB2EC /* SidewalkSafari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SidewalkSafari.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4BC9E5283F919588C654D29 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9FA0414B816DE84ABC58F86 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		10A83FE0A5B1FDDE56CB151B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA619F352D637605AE8A5789 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC6726401D6E38BDB5D415DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE0BCC1547EC15E380A0B4B3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		028B7C1103AC428B0EFD56EA /* SidewalkSafari */ = {
+			isa = PBXGroup;
+			children = (
+				A9F6D2DAC6FDC0203035D3C6 /* Models */,
+				C2944CCB03AD61ACEE9A38A8 /* Views */,
+				5F77FC53F0AB71349E548979 /* SidewalkSafariApp.swift */,
+				26DD1284EF4DE44B63E1C859 /* Assets.xcassets */,
+				B4BC9E5283F919588C654D29 /* Info.plist */,
+			);
+			name = SidewalkSafari;
+			path = SidewalkSafari;
+			sourceTree = "<group>";
+		};
+		05DCA62EA0B5D1DF049B25FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				976622DF3373813017CCB2EC /* SidewalkSafari.app */,
+				23C37140EB22E70FDDCB7B67 /* SidewalkSafariTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D9D51242FAB81A420E5A51B /* SidewalkSafariTests */ = {
+			isa = PBXGroup;
+			children = (
+				86081206B00CFABBC62B789F /* SafariStoreTests.swift */,
+			);
+			name = SidewalkSafariTests;
+			path = SidewalkSafariTests;
+			sourceTree = "<group>";
+		};
+		5DB8526473836D99A2E5F97D /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F9FA0414B816DE84ABC58F86 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		67C9A20DD8DF43AF003B0DFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DB8526473836D99A2E5F97D /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9F6D2DAC6FDC0203035D3C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				31087712D661BAACE89554C7 /* SidewalkModels.swift */,
+				20648618321CDC963B0FB88F /* SafariFixtures.swift */,
+				61D5D9355D3B8D305EE317ED /* SafariStore.swift */,
+			);
+			name = Models;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C2944CCB03AD61ACEE9A38A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A2C6D216FCC5E3648EA1B75 /* SafariStyle.swift */,
+				03320978011A4E1EF3705D32 /* SafariRootView.swift */,
+				3B27D7D2F90BFDA6377E753A /* QuestPickerView.swift */,
+				1079866879FE26027B29BCB2 /* QuestRunView.swift */,
+				30D3E410058C8DCDAC05E166 /* FindMomentView.swift */,
+				5BD94E5D1D60886E41BF1A07 /* SafariLogView.swift */,
+				35D22129AE389E0B7649D09E /* PremiumPreviewView.swift */,
+			);
+			name = Views;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F7AA108B648E6C8B05B1011A = {
+			isa = PBXGroup;
+			children = (
+				05DCA62EA0B5D1DF049B25FE /* Products */,
+				67C9A20DD8DF43AF003B0DFF /* Frameworks */,
+				028B7C1103AC428B0EFD56EA /* SidewalkSafari */,
+				5D9D51242FAB81A420E5A51B /* SidewalkSafariTests */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2755DD9CE60E3AE993668B7A /* SidewalkSafari */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1883FF5BA53C7B0E03C4F9D1 /* Build configuration list for PBXNativeTarget "SidewalkSafari" */;
+			buildPhases = (
+				A4BC2B0E16A70E09AD1FE6DD /* Sources */,
+				10A83FE0A5B1FDDE56CB151B /* Frameworks */,
+				5A5213F951F84378A1E10862 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SidewalkSafari;
+			productName = SidewalkSafari;
+			productReference = 976622DF3373813017CCB2EC /* SidewalkSafari.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A05767D31C56AD958E3A6452 /* SidewalkSafariTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C784C696021ED66F36A27ED /* Build configuration list for PBXNativeTarget "SidewalkSafariTests" */;
+			buildPhases = (
+				A8E34F3CCBDFEFF2C6F823BF /* Sources */,
+				EC6726401D6E38BDB5D415DB /* Frameworks */,
+				77D9F8A8A450C5E6FB8E8967 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF2FBAF71C7054663E756864 /* PBXTargetDependency */,
+			);
+			name = SidewalkSafariTests;
+			productName = SidewalkSafariTests;
+			productReference = 23C37140EB22E70FDDCB7B67 /* SidewalkSafariTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7772FD26886C37DF75A7D968 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 1AFB9419C61DF777F709BECE /* Build configuration list for PBXProject "SidewalkSafari" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F7AA108B648E6C8B05B1011A;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 100;
+			productRefGroup = 05DCA62EA0B5D1DF049B25FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2755DD9CE60E3AE993668B7A /* SidewalkSafari */,
+				A05767D31C56AD958E3A6452 /* SidewalkSafariTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A5213F951F84378A1E10862 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45F10983E1B076209216FE24 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77D9F8A8A450C5E6FB8E8967 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A4BC2B0E16A70E09AD1FE6DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B54F2699E8BE01B8C55CDD43 /* SidewalkSafariApp.swift in Sources */,
+				620301C5AEE1E1B894153065 /* SidewalkModels.swift in Sources */,
+				A5C706FDB67FD700A74A91B4 /* SafariFixtures.swift in Sources */,
+				3C01326640B40ABCEB03C499 /* SafariStore.swift in Sources */,
+				491BE9F83441B22F61EE346D /* SafariStyle.swift in Sources */,
+				7659D6AC6BC13A7CBD0BD318 /* SafariRootView.swift in Sources */,
+				E24836EA7B7A328911475247 /* QuestPickerView.swift in Sources */,
+				80568B2FE865CB9706F6F595 /* QuestRunView.swift in Sources */,
+				FD94B746A7673EBD4FC76FEE /* FindMomentView.swift in Sources */,
+				0FADA7DAFEEBE2262862E891 /* SafariLogView.swift in Sources */,
+				55A829FACD0066FC7625A495 /* PremiumPreviewView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8E34F3CCBDFEFF2C6F823BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B64C8326805E33DA1614BF0C /* SafariStoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF2FBAF71C7054663E756864 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SidewalkSafari;
+			target = 2755DD9CE60E3AE993668B7A /* SidewalkSafari */;
+			targetProxy = 3B04A07B7F1341AE49A35FDE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		184805997BF3F29520C3E883 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SidewalkSafari/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appfactory.sidewalksafari;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		2669FF550FB2526D27D68941 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		326D939B5778CE42C080E6AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SidewalkSafari/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appfactory.sidewalksafari;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6BF86D2EFC19E7050ACF016A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appfactory.sidewalksafari.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SidewalkSafari.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SidewalkSafari";
+			};
+			name = Debug;
+		};
+		75C11503E0E916E3CA8F38BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DA8EDA6A15A3D4C6DA972B18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appfactory.sidewalksafari.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SidewalkSafari.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SidewalkSafari";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1883FF5BA53C7B0E03C4F9D1 /* Build configuration list for PBXNativeTarget "SidewalkSafari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				326D939B5778CE42C080E6AF /* Release */,
+				184805997BF3F29520C3E883 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AFB9419C61DF777F709BECE /* Build configuration list for PBXProject "SidewalkSafari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2669FF550FB2526D27D68941 /* Debug */,
+				75C11503E0E916E3CA8F38BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C784C696021ED66F36A27ED /* Build configuration list for PBXNativeTarget "SidewalkSafariTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA8EDA6A15A3D4C6DA972B18 /* Release */,
+				6BF86D2EFC19E7050ACF016A /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7772FD26886C37DF75A7D968 /* Project object */;
+}

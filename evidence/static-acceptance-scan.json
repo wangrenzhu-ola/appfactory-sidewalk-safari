@@ -1,0 +1,30 @@
+{
+  "schema_version": "appfactory.static_acceptance_scan.v1",
+  "checked_files": [
+    "/Users/wangrenzhu/work/sidewalk-safari-ios/SidewalkSafari/SidewalkSafariApp.swift",
+    "/Users/wangrenzhu/work/sidewalk-safari-ios/SidewalkSafari/Models/SafariFixtures.swift",
+    "/Users/wangrenzhu/work/sidewalk-safari-ios/SidewalkSafari/Models/SafariStore.swift",
+    "/Users/wangrenzhu/work/sidewalk-safari-ios/SidewalkSafari/Models/SidewalkModels.swift",
+    "/Users/wangrenzhu/work/sidewalk-safari-ios/SidewalkSafari/Views/QuestRunView.swift",
+    "/Users/wangrenzhu/work/sidewalk-safari-ios/SidewalkSafari/Views/PremiumPreviewView.swift",
+    "/Users/wangrenzhu/work/sidewalk-safari-ios/SidewalkSafari/Views/FindMomentView.swift",
+    "/Users/wangrenzhu/work/sidewalk-safari-ios/SidewalkSafari/Views/QuestPickerView.swift",
+    "/Users/wangrenzhu/work/sidewalk-safari-ios/SidewalkSafari/Views/SafariStyle.swift",
+    "/Users/wangrenzhu/work/sidewalk-safari-ios/SidewalkSafari/Views/SafariLogView.swift",
+    "/Users/wangrenzhu/work/sidewalk-safari-ios/SidewalkSafari/Views/SafariRootView.swift",
+    "/Users/wangrenzhu/work/sidewalk-safari-ios/SidewalkSafariTests/SafariStoreTests.swift",
+    "/Users/wangrenzhu/work/sidewalk-safari-ios/ios/package_manifest.json"
+  ],
+  "non_en_us_user_visible_candidates": [],
+  "locale_lock": "en-US",
+  "forbidden_claim_policy": "Only allowed as negative/privacy boundary copy; no live community/cache/tracking/AI product claim is implemented.",
+  "required_copy_markers": {
+    "empty_state": "Pick a starter quest or make your first sidewalk safari.",
+    "create_clue": "Add this clue to the safari?",
+    "editing": "Review your sidewalk clues before the walk.",
+    "save_success": "Find moment saved to Safari Log.",
+    "save_failure": "Couldn\u2019t save this find moment. Try again.",
+    "delete_confirm": "Delete this sidewalk safari?",
+    "storekit_unavailable": "StoreKit unavailable"
+  }
+}

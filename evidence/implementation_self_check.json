@@ -1,0 +1,13 @@
+{
+  "schema_version": "appfactory.implementation_self_check.v1",
+  "implementation_mode": "agent_native_build_loop",
+  "generator_template_substitution_allowed": false,
+  "locale_lock": "en-US",
+  "claims": {
+    "native_swiftui": true,
+    "domain_interactions": ["create quest", "edit quest", "edit clue tile", "complete clue", "save find moment", "delete quest", "premium StoreKit unavailable recovery"],
+    "local_persistence": "JSON archive in Application Support",
+    "privacy_boundary": "Find Moment copy states local-only and no upload",
+    "premium_boundary": "Preview only until StoreKit confirms purchase"
+  }
+}
