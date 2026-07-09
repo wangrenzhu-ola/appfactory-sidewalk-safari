@@ -1,0 +1,58 @@
+{
+  "schema_version": "sidewalk_safari.finalgate_repair_ledger.v1",
+  "generated_at": "2026-07-09T02:10:16Z",
+  "repo_path": "/Users/wangrenzhu/work/sidewalk-safari-ios",
+  "branch": "codex/sidewalk-safari-v1-1-finalgate-acceptance",
+  "source_head_before_verdict": "83778ec4b177e5d2875717ac95ad5a742a30072b",
+  "subagent_repair_dispatch_note": "A PackageDeliveryAgent repair subagent was requested for TASTE-001, but native subagent thread limit prevented spawning additional repair agents. The supervisor applied the Designer and PackageDeliveryAgent patch specs directly, preserving the user's one-repair-one-commit rule.",
+  "repairs": [
+    {
+      "id": "TASTE-001",
+      "source": "designer subagent",
+      "blocker": "Internal QA controls were visible in production UI: Fresh Install and Recovery Test / Simulate next save failure.",
+      "fix": "Removed the QuestPicker Fresh Install toolbar action and replaced FindMoment failure-injection UI with a user-facing save status section.",
+      "commit": "9b5879c7e9b34d0f3bfec208e439331a17f84754",
+      "verification": ["rg blocker strings returned no matches", "xcodebuild test passed 6/6 at repair time"]
+    },
+    {
+      "id": "TASTE-002",
+      "source": "designer subagent",
+      "blocker": "Premium preview exposed StoreKit/build implementation copy.",
+      "fix": "Rewrote Premium copy in user-facing language without StoreKit/build references.",
+      "commit": "2844e1621afd87e8a14e0bbad00fe8f0d9de2f60",
+      "verification": ["rg StoreKit/this build/confirms purchase returned no matches in PremiumPreviewView.swift", "xcodebuild test passed 6/6 at repair time"]
+    },
+    {
+      "id": "TASTE-003",
+      "source": "designer subagent",
+      "blocker": "Home privacy copy could be clearer and more natural.",
+      "fix": "Changed the privacy line to: No accounts, uploads, child tracking, or AI-generated clues.",
+      "commit": "a243257b62e02406f812e1720d84709604a4e888",
+      "verification": ["xcodebuild test passed 6/6 at repair time"]
+    },
+    {
+      "id": "TASTE-004",
+      "source": "designer subagent",
+      "blocker": "Route Kit horizontal cards showed truncated button text/crowding in launch screenshot.",
+      "fix": "Changed Route Kits to an adaptive two-column grid, shortened button text to Use Kit, and added bottom safe-area inset.",
+      "commit": "d6f60d91ea01a77733ed7cd0b75badd487110ed7",
+      "verification": ["xcodebuild test passed", "fresh screenshot evidence/finalgate/sidewalk-safari-finalgate-launch.png shows full Use Kit buttons"]
+    },
+    {
+      "id": "FG-002",
+      "source": "PackageDeliveryAgent patch_spec",
+      "blocker": "Corrupted archive and repeated Route Kit/Copy actions were not covered by durable XCTest.",
+      "fix": "Added testCorruptedArchiveRecoversStarterQuestsAndPersistsDefaults and testRepeatedRouteKitAndCopyActionsPersistIndependentWaitingQuests.",
+      "commit": "5ee66f8687f3dc8311605b2a4611f5533fdb5b1d",
+      "verification": ["evidence/finalgate/xcodebuild-test-finalgate-summary.txt shows 8 tests, 0 failures"]
+    },
+    {
+      "id": "FG-001",
+      "source": "PackageDeliveryAgent patch_spec",
+      "blocker": "No durable UltraQA scenario matrix/report evidence existed in the repo.",
+      "fix": "Added FinalGate evidence package with UltraQA report, scenario matrix, subagent reports, fresh test/static/runtime evidence.",
+      "commit": "83778ec4b177e5d2875717ac95ad5a742a30072b",
+      "verification": ["evidence/finalgate/ultraqa-scenario-matrix-v1.1.json has 9 PASS scenarios", "evidence/finalgate/ultraqa-report-v1.1.json status PASS"]
+    }
+  ]
+}

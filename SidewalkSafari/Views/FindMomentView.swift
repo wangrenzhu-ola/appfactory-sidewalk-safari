@@ -7,7 +7,6 @@ struct FindMomentView: View {
     @State private var note = ""
     @State private var mood: MoodTag = .curious
     @State private var includePhotoPlaceholder = false
-    @State private var injectFailure = false
 
     var body: some View {
         Form {
@@ -28,9 +27,8 @@ struct FindMomentView: View {
                     .foregroundStyle(SafariStyle.chalkGreen)
                     .accessibilityLabel("Privacy Notice. Find Moments stay on this device and are not uploaded.")
             }
-            Section("Recovery Test") {
-                Toggle("Simulate next save failure", isOn: $injectFailure)
-                if let error = store.saveErrorMessage {
+            if let error = store.saveErrorMessage {
+                Section("Save Status") {
                     Label(error, systemImage: "exclamationmark.triangle.fill")
                         .foregroundStyle(.red)
                         .accessibilityLabel(error)
@@ -49,11 +47,8 @@ struct FindMomentView: View {
     }
 
     private func save() {
-        store.simulateNextSaveFailure = injectFailure
         if store.saveFindMoment(quest: quest, note: note, mood: mood, includePhotoPlaceholder: includePhotoPlaceholder) {
             dismiss()
-        } else {
-            injectFailure = false
         }
     }
 }

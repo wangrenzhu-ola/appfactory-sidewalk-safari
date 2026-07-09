@@ -21,14 +21,14 @@ struct PremiumPreviewView: View {
 
     private var storeKitRecovery: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Label("StoreKit unavailable", systemImage: "wifi.exclamationmark")
+            Label("Premium themes are taking a snack break", systemImage: "paintpalette")
                 .font(.headline)
                 .foregroundStyle(SafariStyle.chalkAmber)
-            Text("Purchases are not confirmed in this build. Keep playing starter quests and try Premium again later.")
+            Text("Core quests, Find Moments, and Safari Log stay ready. Check back later for extra chalk palettes and badge styles.")
                 .foregroundStyle(.secondary)
             Button("Try Premium Later") { }
                 .buttonStyle(.bordered)
-                .accessibilityLabel("Try Premium later. StoreKit unavailable recovery")
+                .accessibilityLabel("Try Premium later")
         }
         .chalkCard()
     }
@@ -44,7 +44,7 @@ private struct PremiumThemeCard: View {
                 VStack(alignment: .leading) {
                     Text("Chalk Glow Pack")
                         .font(.title2.bold())
-                    Text("Preview only until StoreKit confirms purchase.")
+                    Text("A preview of brighter chalk palettes for future walks.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
@@ -58,6 +58,6 @@ private struct PremiumThemeCard: View {
             }
         }
         .chalkCard()
-        .accessibilityLabel("Premium Theme Preview. Chalk Glow Pack preview only until StoreKit confirms purchase.")
+        .accessibilityLabel("Premium Theme Preview. Chalk Glow Pack preview with brighter chalk palettes for future walks.")
     }
 }

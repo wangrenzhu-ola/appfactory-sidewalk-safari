@@ -1,0 +1,26 @@
+Test Suite 'All tests' started at 2026-07-09 10:07:32.313.
+Test Suite 'SidewalkSafariTests.xctest' started at 2026-07-09 10:07:32.313.
+Test Suite 'SafariStoreTests' started at 2026-07-09 10:07:32.313.
+Test Case '-[SidewalkSafariTests.SafariStoreTests testBadgeProgressAndDeleteQuest]' started.
+Test Case '-[SidewalkSafariTests.SafariStoreTests testBadgeProgressAndDeleteQuest]' passed (0.004 seconds).
+Test Case '-[SidewalkSafariTests.SafariStoreTests testCopyQuestResetsClueStatusAndPersists]' started.
+Test Case '-[SidewalkSafariTests.SafariStoreTests testCopyQuestResetsClueStatusAndPersists]' passed (0.002 seconds).
+Test Case '-[SidewalkSafariTests.SafariStoreTests testCorruptedArchiveRecoversStarterQuestsAndPersistsDefaults]' started.
+Test Case '-[SidewalkSafariTests.SafariStoreTests testCorruptedArchiveRecoversStarterQuestsAndPersistsDefaults]' passed (0.004 seconds).
+Test Case '-[SidewalkSafariTests.SafariStoreTests testCustomQuestPersistsAndReloads]' started.
+Test Case '-[SidewalkSafariTests.SafariStoreTests testCustomQuestPersistsAndReloads]' passed (0.001 seconds).
+Test Case '-[SidewalkSafariTests.SafariStoreTests testFindMomentFailureKeepsDraftRecoveryMessage]' started.
+Test Case '-[SidewalkSafariTests.SafariStoreTests testFindMomentFailureKeepsDraftRecoveryMessage]' passed (0.001 seconds).
+Test Case '-[SidewalkSafariTests.SafariStoreTests testRepeatedRouteKitAndCopyActionsPersistIndependentWaitingQuests]' started.
+Test Case '-[SidewalkSafariTests.SafariStoreTests testRepeatedRouteKitAndCopyActionsPersistIndependentWaitingQuests]' passed (0.003 seconds).
+Test Case '-[SidewalkSafariTests.SafariStoreTests testRouteKitCreatesEditableCustomQuest]' started.
+Test Case '-[SidewalkSafariTests.SafariStoreTests testRouteKitCreatesEditableCustomQuest]' passed (0.001 seconds).
+Test Case '-[SidewalkSafariTests.SafariStoreTests testWalkRecapCountsProgressMomentsAndReplays]' started.
+Test Case '-[SidewalkSafariTests.SafariStoreTests testWalkRecapCountsProgressMomentsAndReplays]' passed (0.003 seconds).
+Test Suite 'SafariStoreTests' passed at 2026-07-09 10:07:32.335.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.020 (0.022) seconds
+Test Suite 'SidewalkSafariTests.xctest' passed at 2026-07-09 10:07:32.335.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.020 (0.022) seconds
+Test Suite 'All tests' passed at 2026-07-09 10:07:32.335.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.020 (0.023) seconds
+** TEST SUCCEEDED **

@@ -98,6 +98,49 @@ final class SafariStoreTests: XCTestCase {
         XCTAssertEqual(recap.summaryLine, "1 completed • 1 skipped • 1 Find Moments")
     }
 
+    func testCorruptedArchiveRecoversStarterQuestsAndPersistsDefaults() throws {
+        let url = temporaryArchiveURL()
+        try FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+        try Data("not valid safari archive".utf8).write(to: url)
+
+        let store = SafariStore(archiveURL: url)
+
+        XCTAssertEqual(store.quests.filter(\.isStarter).count, 3)
+        XCTAssertTrue(store.customQuests.isEmpty)
+        XCTAssertTrue(store.moments.isEmpty)
+        XCTAssertTrue(store.badges.isEmpty)
+        XCTAssertEqual(store.premium.first?.entitlementState, .unavailable)
+
+        let reloaded = SafariStore(archiveURL: url)
+        XCTAssertEqual(reloaded.quests.filter(\.isStarter).count, 3)
+        XCTAssertEqual(reloaded.premium.first?.entitlementState, .unavailable)
+    }
+
+    func testRepeatedRouteKitAndCopyActionsPersistIndependentWaitingQuests() throws {
+        let url = temporaryArchiveURL()
+        let store = SafariStore(archiveURL: url)
+        let kit = try XCTUnwrap(store.routeKits.first { $0.id == "bus-stop" })
+
+        store.createQuest(from: kit)
+        store.createQuest(from: kit)
+        let routeKitQuests = store.customQuests.filter { $0.title == "Today’s Bus Stop" }
+        XCTAssertEqual(routeKitQuests.count, 2)
+        XCTAssertEqual(Set(routeKitQuests.map(\.id)).count, 2)
+        XCTAssertTrue(routeKitQuests.allSatisfy { !$0.isStarter })
+        XCTAssertTrue(routeKitQuests.allSatisfy { $0.clueTiles.allSatisfy { $0.status == .waiting } })
+
+        let source = try XCTUnwrap(store.quests.first(where: \.isStarter))
+        store.copyQuest(source)
+        store.copyQuest(source)
+
+        let reloaded = SafariStore(archiveURL: url)
+        let copiedQuests = reloaded.customQuests.filter { $0.title == "Copy of \(source.title)" }
+        XCTAssertEqual(copiedQuests.count, 2)
+        XCTAssertEqual(Set(copiedQuests.map(\.id)).count, 2)
+        XCTAssertTrue(copiedQuests.allSatisfy { !$0.isStarter })
+        XCTAssertTrue(copiedQuests.allSatisfy { $0.clueTiles.allSatisfy { $0.status == .waiting } })
+    }
+
     private func temporaryArchiveURL() -> URL {
         FileManager.default.temporaryDirectory
             .appendingPathComponent("SidewalkSafariTests")

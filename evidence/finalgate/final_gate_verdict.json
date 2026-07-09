@@ -1,0 +1,158 @@
+{
+  "schema_version": "appfactory.final_gate.patchable.v1",
+  "status": "PASS",
+  "accepted": true,
+  "repo_path": "/Users/wangrenzhu/work/sidewalk-safari-ios",
+  "repo_url": "git@github.com:wangrenzhu-ola/appfactory-sidewalk-safari.git",
+  "branch": "codex/sidewalk-safari-v1-1-finalgate-acceptance",
+  "source_head_verified": "83778ec4b177e5d2875717ac95ad5a742a30072b",
+  "generated_at": "2026-07-09T02:10:16Z",
+  "blockers": [],
+  "requirement_results": [
+    {
+      "requirement_id": "inputs_acceptance_authority",
+      "status": "PASS",
+      "evidence_refs": [
+        "docs/next-version-v1.1-route-kits.md",
+        "docs/finalgate/v1.1-acceptance-checklist.md"
+      ]
+    },
+    {
+      "requirement_id": "route_kits",
+      "status": "PASS",
+      "evidence_refs": [
+        "SidewalkSafari/Views/QuestPickerView.swift",
+        "SidewalkSafari/Models/SafariFixtures.swift",
+        "SidewalkSafariTests/SafariStoreTests.swift",
+        "evidence/finalgate/sidewalk-safari-finalgate-launch.png"
+      ]
+    },
+    {
+      "requirement_id": "copy_quest",
+      "status": "PASS",
+      "evidence_refs": [
+        "SidewalkSafari/Views/QuestPickerView.swift",
+        "SidewalkSafari/Models/SafariStore.swift",
+        "SidewalkSafariTests/SafariStoreTests.swift"
+      ]
+    },
+    {
+      "requirement_id": "walk_recap",
+      "status": "PASS",
+      "evidence_refs": [
+        "SidewalkSafari/Views/QuestRunView.swift",
+        "SidewalkSafari/Views/SafariLogView.swift",
+        "SidewalkSafariTests/SafariStoreTests.swift"
+      ]
+    },
+    {
+      "requirement_id": "non_goals",
+      "status": "PASS",
+      "evidence_refs": [
+        "evidence/finalgate/static-scan-finalgate.json"
+      ]
+    },
+    {
+      "requirement_id": "taste_ui",
+      "status": "PASS",
+      "evidence_refs": [
+        "evidence/finalgate/subagents/designer-taste-review.md",
+        "evidence/finalgate/sidewalk-safari-finalgate-launch.png",
+        "evidence/finalgate/static-scan-finalgate.json"
+      ]
+    },
+    {
+      "requirement_id": "ultraqa_dynamic",
+      "status": "PASS",
+      "evidence_refs": [
+        "evidence/finalgate/ultraqa-report-v1.1.json",
+        "evidence/finalgate/ultraqa-scenario-matrix-v1.1.json"
+      ]
+    },
+    {
+      "requirement_id": "fresh_xcode_runtime",
+      "status": "PASS",
+      "evidence_refs": [
+        "evidence/finalgate/xcodebuild-test-finalgate-summary.txt",
+        "evidence/finalgate/simctl-runtime-finalgate.log",
+        "evidence/finalgate/sidewalk-safari-finalgate-launch.png"
+      ]
+    },
+    {
+      "requirement_id": "repair_commit_policy",
+      "status": "PASS",
+      "evidence_refs": [
+        "evidence/finalgate/repair-ledger.json"
+      ]
+    }
+  ],
+  "final_gate_checks": [
+    {
+      "check_id": "final-product-acceptance",
+      "surface": "product_acceptance",
+      "status": "PASS",
+      "evidence_refs": [
+        "docs/next-version-v1.1-route-kits.md",
+        "docs/finalgate/v1.1-acceptance-checklist.md"
+      ]
+    },
+    {
+      "check_id": "final-ultraqa-product-acceptance",
+      "surface": "ultraqa",
+      "status": "PASS",
+      "evidence_refs": [
+        "evidence/finalgate/ultraqa-report-v1.1.json",
+        "evidence/finalgate/ultraqa-scenario-matrix-v1.1.json"
+      ]
+    },
+    {
+      "check_id": "final-xcode-tests",
+      "surface": "xcode_tests",
+      "status": "PASS",
+      "evidence_refs": [
+        "evidence/finalgate/xcodebuild-test-finalgate.log",
+        "evidence/finalgate/xcodebuild-test-finalgate-summary.txt"
+      ]
+    },
+    {
+      "check_id": "final-runtime-evidence",
+      "surface": "xcode_runtime",
+      "status": "PASS",
+      "evidence_refs": [
+        "evidence/finalgate/simctl-runtime-finalgate.log",
+        "evidence/finalgate/sidewalk-safari-finalgate-launch.png"
+      ]
+    },
+    {
+      "check_id": "final-static-scan",
+      "surface": "static_scan",
+      "status": "PASS",
+      "evidence_refs": [
+        "evidence/finalgate/static-scan-finalgate.json"
+      ]
+    },
+    {
+      "check_id": "final-repair-ledger",
+      "surface": "repair_ledger",
+      "status": "PASS",
+      "evidence_refs": [
+        "evidence/finalgate/repair-ledger.json"
+      ]
+    }
+  ],
+  "ultraqa_required": true,
+  "ultraqa_status": "PASS",
+  "ultraqa_report_ref": "evidence/finalgate/ultraqa-report-v1.1.json",
+  "scenario_matrix_ref": "evidence/finalgate/ultraqa-scenario-matrix-v1.1.json",
+  "fresh_runtime_evidence_refs": [
+    "evidence/finalgate/xcodebuild-test-finalgate-summary.txt",
+    "evidence/finalgate/simctl-runtime-finalgate.log",
+    "evidence/finalgate/sidewalk-safari-finalgate-launch.png"
+  ],
+  "stale_evidence_conflicts": [],
+  "adversarial_blockers": [],
+  "repair_ledger_ref": "evidence/finalgate/repair-ledger.json",
+  "handoff": {
+    "next": "ready_for_review"
+  }
+}
