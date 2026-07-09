@@ -1,0 +1,27 @@
+generated_at=2026-07-09T02:07:29Z
+branch=codex/sidewalk-safari-v1-1-finalgate-acceptance
+head=5ee66f8687f3dc8311605b2a4611f5533fdb5b1d
+udid=BBB7317F-76C6-4BD5-BF4B-EF6ABAEBA1F8
+Monitoring boot status for iPhone 17 (BBB7317F-76C6-4BD5-BF4B-EF6ABAEBA1F8).
+Device already booted, nothing to do.
+
+com.appfactory.sidewalksafari: 38483
+Detected file type from extension: PNG
+Note: No display specified. Defaulting to display: 9DDC5F18-5BC1-4D70-ADD4-E482BCCDD7B1 (screenID: 1, name: LCD)
+Wrote screenshot to: /Users/wangrenzhu/work/sidewalk-safari-ios/evidence/finalgate/sidewalk-safari-finalgate-launch.png
+{
+    ApplicationType = User;
+    Bundle = "file:///Users/wangrenzhu/Library/Developer/CoreSimulator/Devices/BBB7317F-76C6-4BD5-BF4B-EF6ABAEBA1F8/data/Containers/Bundle/Application/99DD974B-FD03-4245-8131-626E9B658E4A/SidewalkSafari.app/";
+    BundleContainer = "file:///Users/wangrenzhu/Library/Developer/CoreSimulator/Devices/BBB7317F-76C6-4BD5-BF4B-EF6ABAEBA1F8/data/Containers/Bundle/Application/99DD974B-FD03-4245-8131-626E9B658E4A/";
+    CFBundleDisplayName = "Sidewalk Safari";
+    CFBundleExecutable = SidewalkSafari;
+    CFBundleIdentifier = "com.appfactory.sidewalksafari";
+    CFBundleName = SidewalkSafari;
+    CFBundleVersion = 1;
+    DataContainer = "file:///Users/wangrenzhu/Library/Developer/CoreSimulator/Devices/BBB7317F-76C6-4BD5-BF4B-EF6ABAEBA1F8/data/Containers/Data/Application/82E5B610-9DC1-4BA1-AADD-EB870634EA0C/";
+    GroupContainers =     {
+    };
+    Path = "/Users/wangrenzhu/Library/Developer/CoreSimulator/Devices/BBB7317F-76C6-4BD5-BF4B-EF6ABAEBA1F8/data/Containers/Bundle/Application/99DD974B-FD03-4245-8131-626E9B658E4A/SidewalkSafari.app";
+    SBAppTags =     (
+    );
+}

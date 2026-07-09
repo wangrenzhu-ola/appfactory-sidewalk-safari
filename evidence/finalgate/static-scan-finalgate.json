@@ -1,0 +1,22 @@
+{
+  "schema_version": "sidewalk_safari.static_scan.v1",
+  "non_en_swift_count": 0,
+  "non_en_samples": [],
+  "internal_process_copy_count": 0,
+  "internal_process_copy_samples": [],
+  "non_goal_scan": {
+    "mapkit_refs": [],
+    "corelocation_refs": [],
+    "network_refs": [],
+    "backend_refs": [],
+    "tracking_refs": [],
+    "ai_generation_refs": [],
+    "storekit_import_refs": [],
+    "purchase_api_refs": [],
+    "dependency_manifests": []
+  },
+  "allowed_negative_non_goal_copy": [
+    "No accounts, uploads, child tracking, or AI-generated clues."
+  ],
+  "status": "PASS"
+}

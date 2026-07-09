@@ -1,0 +1,76 @@
+{
+  "schema_version": "sidewalk_safari.ultraqa_report.v1",
+  "generated_at": "2026-07-09T02:09:04Z",
+  "repo_path": "/Users/wangrenzhu/work/sidewalk-safari-ios",
+  "branch": "codex/sidewalk-safari-v1-1-finalgate-acceptance",
+  "source_head_at_generation": "5ee66f8687f3dc8311605b2a4611f5533fdb5b1d",
+  "status": "PASS",
+  "goal": "Validate SidewalkSafari v1.1 Route Kits, Copy Quest, Walk Recap, taste/UI, and FinalGate evidence readiness.",
+  "stop_condition": "All product acceptance items and adversarial scenarios pass with fresh evidence and no blockers.",
+  "scenario_matrix_ref": "evidence/finalgate/ultraqa-scenario-matrix-v1.1.json",
+  "commands_run": [
+    {
+      "command": "xcodebuild test -project SidewalkSafari.xcodeproj -scheme SidewalkSafari -destination 'platform=iOS Simulator,name=iPhone 17,OS=26.5'",
+      "exit_code": 0,
+      "evidence_ref": "evidence/finalgate/xcodebuild-test-finalgate.log",
+      "summary": "8 tests, 0 failures"
+    },
+    {
+      "command": "python3 static scan for en-US/internal-process/non-goal refs",
+      "exit_code": 0,
+      "evidence_ref": "evidence/finalgate/static-scan-finalgate.json",
+      "summary": "PASS"
+    },
+    {
+      "command": "xcodebuild build + simctl install/launch/screenshot",
+      "exit_code": 0,
+      "evidence_ref": "evidence/finalgate/simctl-runtime-finalgate.log",
+      "summary": "Runtime screenshot captured"
+    }
+  ],
+  "failures_found": [
+    {
+      "id": "TASTE-001..004",
+      "status": "FIXED",
+      "summary": "Designer subagent found internal QA controls, implementation copy, and Route Kit layout polish blockers; fixed in four separate commits."
+    }
+  ],
+  "fixes_applied": [
+    {
+      "id": "TASTE-001",
+      "commit": "9b5879c7e9b34d0f3bfec208e439331a17f84754",
+      "summary": "Removed internal QA controls from production UI."
+    },
+    {
+      "id": "TASTE-002",
+      "commit": "2844e1621afd87e8a14e0bbad00fe8f0d9de2f60",
+      "summary": "Rewrote premium preview copy for users."
+    },
+    {
+      "id": "TASTE-003",
+      "commit": "a243257b62e02406f812e1720d84709604a4e888",
+      "summary": "Clarified local privacy copy."
+    },
+    {
+      "id": "TASTE-004",
+      "commit": "d6f60d91ea01a77733ed7cd0b75badd487110ed7",
+      "summary": "Polished Route Kit card layout."
+    },
+    {
+      "id": "FG-002",
+      "commit": "5ee66f8687f3dc8311605b2a4611f5533fdb5b1d",
+      "summary": "Added corrupt archive and repeated action XCTest coverage."
+    }
+  ],
+  "stale_evidence_conflicts": [],
+  "adversarial_blockers": [],
+  "residual_risks": [
+    "Direct UI tap automation was not retained as durable evidence; source/unit/runtime screenshot evidence is used instead."
+  ],
+  "evidence_refs": [
+    "evidence/finalgate/xcodebuild-test-finalgate-summary.txt",
+    "evidence/finalgate/static-scan-finalgate.json",
+    "evidence/finalgate/simctl-runtime-finalgate.log",
+    "evidence/finalgate/sidewalk-safari-finalgate-launch.png"
+  ]
+}

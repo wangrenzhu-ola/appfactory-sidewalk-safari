@@ -1,0 +1,9 @@
+{
+  "schema_version": "sidewalk_safari.finalgate.supervisor_evidence.v1",
+  "generated_at": "2026-07-09T01:57:07Z",
+  "branch": "codex/sidewalk-safari-v1-1-finalgate-acceptance",
+  "head": "3fd9398c236474a703c59755892c6138c6f37802",
+  "origin_main": "3fd9398c236474a703c59755892c6138c6f37802",
+  "status_before": ["?? docs/finalgate/", "?? evidence/finalgate/"],
+  "checks": {}
+}

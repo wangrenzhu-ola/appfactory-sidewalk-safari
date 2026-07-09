@@ -1,0 +1,144 @@
+{
+  "schema_version": "sidewalk_safari.ultraqa_scenario_matrix.v1",
+  "generated_at": "2026-07-09T02:09:04Z",
+  "repo_path": "/Users/wangrenzhu/work/sidewalk-safari-ios",
+  "branch": "codex/sidewalk-safari-v1-1-finalgate-acceptance",
+  "source_head_at_generation": "5ee66f8687f3dc8311605b2a4611f5533fdb5b1d",
+  "status": "PASS",
+  "stale_evidence_conflicts": [],
+  "adversarial_blockers": [],
+  "scenarios": [
+    {
+      "id": "UQA-01",
+      "intent": "Normal v1.1 walk path",
+      "user_or_attacker_model": "Parent uses v1.1 before and after a walk",
+      "setup": "Fresh SafariStore temp archive and starter quests",
+      "command_or_harness": "XCTest testRouteKitCreatesEditableCustomQuest, testCopyQuestResetsClueStatusAndPersists, testWalkRecapCountsProgressMomentsAndReplays; subagent /tmp Swift harness",
+      "expected_signal": "Route Kit creates custom quest; copy resets waiting clues; complete/skip/moment/replay recap persists",
+      "actual_result": "8-test final run passed; subagent harness reported starter=3 custom=2 moments=1 recap=1 completed \u2022 1 skipped \u2022 1 Find Moments replay=1",
+      "status": "PASS",
+      "evidence_refs": [
+        "SidewalkSafariTests/SafariStoreTests.swift",
+        "evidence/finalgate/xcodebuild-test-finalgate-summary.txt"
+      ],
+      "cleanup_status": "No persistent temporary harness retained"
+    },
+    {
+      "id": "UQA-02",
+      "intent": "Fresh install / empty state",
+      "user_or_attacker_model": "New local install or user reset state",
+      "setup": "resetForFreshInstall and restoreStarterQuestsIfNeeded path",
+      "command_or_harness": "Source readback plus subagent /tmp Swift harness",
+      "expected_signal": "Quests can be empty, premium unavailable, starter quests restore locally",
+      "actual_result": "Subagent harness reported restored quests=3 premium=unavailable; source preserves local-only reset/restore",
+      "status": "PASS",
+      "evidence_refs": [
+        "SidewalkSafari/Models/SafariStore.swift",
+        "evidence/finalgate/subagents/ultraqa-test-engineer-report.md"
+      ],
+      "cleanup_status": "No repo mutation by harness"
+    },
+    {
+      "id": "UQA-03",
+      "intent": "Repeated actions",
+      "user_or_attacker_model": "Parent taps route/copy actions multiple times",
+      "setup": "Temp archive, repeated createQuest(from:) and copyQuest(_:)",
+      "command_or_harness": "XCTest testRepeatedRouteKitAndCopyActionsPersistIndependentWaitingQuests",
+      "expected_signal": "Independent custom quest IDs; editable; all copied clues waiting; persisted reload",
+      "actual_result": "Final Xcode run passed testRepeatedRouteKitAndCopyActionsPersistIndependentWaitingQuests",
+      "status": "PASS",
+      "evidence_refs": [
+        "SidewalkSafariTests/SafariStoreTests.swift",
+        "evidence/finalgate/xcodebuild-test-finalgate-summary.txt"
+      ],
+      "cleanup_status": "Temporary archive path only"
+    },
+    {
+      "id": "UQA-04",
+      "intent": "Corrupted local archive recovery",
+      "user_or_attacker_model": "Malformed/corrupt local state file",
+      "setup": "Invalid JSON written to temp archive URL",
+      "command_or_harness": "XCTest testCorruptedArchiveRecoversStarterQuestsAndPersistsDefaults",
+      "expected_signal": "No crash; starter quests/default premium restored; archive reload succeeds",
+      "actual_result": "Final Xcode run passed testCorruptedArchiveRecoversStarterQuestsAndPersistsDefaults",
+      "status": "PASS",
+      "evidence_refs": [
+        "SidewalkSafariTests/SafariStoreTests.swift",
+        "evidence/finalgate/xcodebuild-test-finalgate-summary.txt"
+      ],
+      "cleanup_status": "Temporary archive path only"
+    },
+    {
+      "id": "UQA-05",
+      "intent": "Non-goals static scan",
+      "user_or_attacker_model": "Adversarial scope creep check",
+      "setup": "Scan Swift sources and dependency manifests",
+      "command_or_harness": "Python static scan written to evidence/finalgate/static-scan-finalgate.json",
+      "expected_signal": "No MapKit/CoreLocation/network/backend/tracking/AI generation/StoreKit import/purchase API/new deps",
+      "actual_result": "static scan status PASS with only allowlisted negative non-goal copy",
+      "status": "PASS",
+      "evidence_refs": [
+        "evidence/finalgate/static-scan-finalgate.json"
+      ],
+      "cleanup_status": "No generated debris outside evidence"
+    },
+    {
+      "id": "UQA-06",
+      "intent": "Stale evidence conflict check",
+      "user_or_attacker_model": "Old PASS evidence conflicts with current source",
+      "setup": "Compare branch/head/status and regenerate evidence after repairs",
+      "command_or_harness": "git status, git rev-parse, fresh xcodebuild/simctl/static scans",
+      "expected_signal": "Current evidence references current branch and no unresolved tracked product source dirt",
+      "actual_result": "Evidence regenerated after commits through 5ee66f8687f3dc8311605b2a4611f5533fdb5b1d; pending evidence files are intentional",
+      "status": "PASS",
+      "evidence_refs": [
+        "evidence/finalgate/supervisor-baseline.json",
+        "evidence/finalgate/xcodebuild-test-finalgate-summary.txt"
+      ],
+      "cleanup_status": "Intentional evidence remains uncommitted until FG-001/FG-003 commits"
+    },
+    {
+      "id": "UQA-07",
+      "intent": "Misleading success output guard",
+      "user_or_attacker_model": "Tool prints SUCCESS but exits non-zero",
+      "setup": "Subagent temporary wrapper around failing shell command",
+      "command_or_harness": "bash -c 'echo SUCCESS...; exit 7' classified by exit code",
+      "expected_signal": "Non-zero exit is not accepted as success",
+      "actual_result": "Subagent reported underlying exit=7 classified as non-success",
+      "status": "PASS",
+      "evidence_refs": [
+        "evidence/finalgate/subagents/ultraqa-test-engineer-report.md"
+      ],
+      "cleanup_status": "Temporary wrapper removed by subagent"
+    },
+    {
+      "id": "UQA-08",
+      "intent": "Runtime launch after UI repairs",
+      "user_or_attacker_model": "Operator installs and opens the built app",
+      "setup": "Fresh Debug simulator build, install, launch, screenshot",
+      "command_or_harness": "xcodebuild build; simctl install; simctl launch; simctl io screenshot",
+      "expected_signal": "Exit 0 commands and screenshot showing v1.1 Route Kits surface without internal QA toolbar",
+      "actual_result": "simctl runtime log exists and screenshot captured",
+      "status": "PASS",
+      "evidence_refs": [
+        "evidence/finalgate/simctl-runtime-finalgate.log",
+        "evidence/finalgate/sidewalk-safari-finalgate-launch.png"
+      ],
+      "cleanup_status": "DerivedData in /tmp may be removed; durable screenshot/log retained"
+    },
+    {
+      "id": "UQA-09",
+      "intent": "Dirty worktree awareness",
+      "user_or_attacker_model": "Acceptance hides unrelated dirty state",
+      "setup": "Record git status before/after evidence generation",
+      "command_or_harness": "git status --short --branch",
+      "expected_signal": "Only intentional docs/evidence files are dirty before evidence commits",
+      "actual_result": "No tracked product files dirty after commits except current intentional evidence/checklist files",
+      "status": "PASS",
+      "evidence_refs": [
+        "evidence/finalgate/repair-ledger.json"
+      ],
+      "cleanup_status": "Will be clean after evidence/verdict commits"
+    }
+  ]
+}
