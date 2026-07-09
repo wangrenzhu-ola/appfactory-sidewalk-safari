@@ -1,6 +1,45 @@
 import Foundation
 
 enum SafariFixtures {
+    static let routeKits: [RouteKit] = [
+        RouteKit(
+            id: "school-walk",
+            title: "School Walk",
+            subtitle: "Five-minute clues for the way to class.",
+            routeHint: "Use a familiar school route and stop only in safe waiting spots.",
+            theme: .chalkDaylight,
+            cluePrompts: ["Find a backpack color", "Spot a crosswalk symbol", "Hear one morning sound"],
+            symbolName: "graduationcap.fill"
+        ),
+        RouteKit(
+            id: "bus-stop",
+            title: "Bus Stop",
+            subtitle: "Tiny discoveries while you wait.",
+            routeHint: "Play near the stop or bench while staying with your grown-up.",
+            theme: .soundSteps,
+            cluePrompts: ["Find a route number", "Hear the loudest vehicle", "Notice a waiting-line shape"],
+            symbolName: "bus.fill"
+        ),
+        RouteKit(
+            id: "park-gate",
+            title: "Park Gate",
+            subtitle: "Nature clues before the playground.",
+            routeHint: "Start at the park entrance and keep the quest on public paths.",
+            theme: .tinySigns,
+            cluePrompts: ["Find a leaf shadow", "Spot a gate pattern", "Name one bird sound"],
+            symbolName: "tree.fill"
+        ),
+        RouteKit(
+            id: "errand-loop",
+            title: "Errand Loop",
+            subtitle: "A quick quest for shop or library walks.",
+            routeHint: "Use a short errand route with clear grown-up checkpoints.",
+            theme: .chalkDaylight,
+            cluePrompts: ["Find a window sign", "Spot a round handle", "Hear a checkout sound"],
+            symbolName: "bag.fill"
+        )
+    ]
+
     static func starterQuests(now: Date = Date()) -> [SidewalkQuest] {
         [
             makeQuest(
@@ -39,14 +78,14 @@ enum SafariFixtures {
         ]
     }
 
-    static func makeCustomQuest(title: String, routeHint: String, prompts: [String]) -> SidewalkQuest {
+    static func makeCustomQuest(title: String, routeHint: String, prompts: [String], theme: SafariTheme = .chalkDaylight) -> SidewalkQuest {
         let id = UUID()
         let now = Date()
         return SidewalkQuest(
             id: id,
             title: title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "My Sidewalk Safari" : title,
             routeHint: routeHint.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "Choose a safe, familiar short walk." : routeHint,
-            theme: .chalkDaylight,
+            theme: theme,
             clueTiles: prompts.enumerated().map { index, prompt in
                 ClueTile(id: UUID(), questId: id, prompt: prompt, status: .waiting, order: index, optionalHint: nil)
             },

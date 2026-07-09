@@ -1,0 +1,6 @@
+{
+  "schema_version": "appfactory.xcode_test_result.v1",
+  "command": "xcodebuild test -project SidewalkSafari.xcodeproj -scheme SidewalkSafari -destination platform=iOS Simulator,name=iPhone 17,OS=26.5",
+  "exit_code": 0,
+  "log_ref": "/Users/wangrenzhu/work/sidewalk-safari-ios/evidence/xcodebuild-test-v1.1.log"
+}

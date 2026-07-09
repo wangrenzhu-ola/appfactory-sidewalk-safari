@@ -23,6 +23,10 @@ final class SafariStore: ObservableObject {
         load()
     }
 
+    var routeKits: [RouteKit] {
+        SafariFixtures.routeKits
+    }
+
     var customQuests: [SidewalkQuest] {
         quests.filter { !$0.isStarter }
     }
@@ -59,6 +63,30 @@ final class SafariStore: ObservableObject {
         )
         quests.insert(quest, at: 0)
         lastSuccessMessage = "Custom sidewalk safari saved."
+        persist()
+    }
+
+    func createQuest(from kit: RouteKit) {
+        let quest = SafariFixtures.makeCustomQuest(
+            title: "Today’s \(kit.title)",
+            routeHint: kit.routeHint,
+            prompts: kit.cluePrompts,
+            theme: kit.theme
+        )
+        quests.insert(quest, at: 0)
+        lastSuccessMessage = "Route Kit saved as an editable sidewalk safari."
+        persist()
+    }
+
+    func copyQuest(_ quest: SidewalkQuest) {
+        let copied = SafariFixtures.makeCustomQuest(
+            title: "Copy of \(quest.title)",
+            routeHint: quest.routeHint,
+            prompts: quest.clueTiles.sorted { $0.order < $1.order }.map(\.prompt),
+            theme: quest.theme
+        )
+        quests.insert(copied, at: 0)
+        lastSuccessMessage = "Quest copied. Edit the clue tiles before today’s walk."
         persist()
     }
 
@@ -113,9 +141,28 @@ final class SafariStore: ObservableObject {
     }
 
     func replay(_ quest: SidewalkQuest) {
-        guard let index = badges.firstIndex(where: { $0.questId == quest.id }) else { return }
-        badges[index].replayCount += 1
+        if let index = badges.firstIndex(where: { $0.questId == quest.id }) {
+            badges[index].replayCount += 1
+        } else {
+            badges.insert(BadgeProgress(questId: quest.id, completedClues: quest.completedClueCount, badgeName: quest.badgeName, replayCount: 1), at: 0)
+        }
         persist()
+    }
+
+    func walkRecap(for quest: SidewalkQuest) -> WalkRecap {
+        let completed = quest.clueTiles.filter { $0.status == .complete }.count
+        let skipped = quest.clueTiles.filter { $0.status == .skipped }.count
+        let momentCount = moments.filter { $0.questId == quest.id }.count
+        let replayCount = badges.first(where: { $0.questId == quest.id })?.replayCount ?? 0
+        let nextStep: String
+        if completed == quest.clueTiles.count && momentCount > 0 {
+            nextStep = "Replay this safari or copy it for a new sidewalk."
+        } else if completed > 0 || skipped > 0 {
+            nextStep = "Save a Find Moment before you finish the walk."
+        } else {
+            nextStep = "Complete one Clue Tile to start the recap."
+        }
+        return WalkRecap(completedClues: completed, skippedClues: skipped, totalClues: quest.clueTiles.count, findMoments: momentCount, replayCount: replayCount, nextStep: nextStep)
     }
 
     func deleteQuest(_ quest: SidewalkQuest) {

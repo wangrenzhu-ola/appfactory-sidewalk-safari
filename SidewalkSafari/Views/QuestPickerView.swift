@@ -9,6 +9,7 @@ struct QuestPickerView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 OnboardingCard()
+                routeKitSection
                 if store.quests.isEmpty {
                     EmptyQuestShelf(onRestore: store.restoreStarterQuestsIfNeeded, onCreate: { isShowingCreateQuest = true })
                 } else {
@@ -20,6 +21,11 @@ struct QuestPickerView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .accessibilityLabel("Create Custom Quest")
+                if let message = store.lastSuccessMessage {
+                    Label(message, systemImage: "checkmark.seal.fill")
+                        .foregroundStyle(SafariStyle.chalkGreen)
+                        .accessibilityLabel(message)
+                }
             }
             .padding()
         }
@@ -39,10 +45,23 @@ struct QuestPickerView: View {
         }
     }
 
+    private var routeKitSection: some View {
+        QuestSection(title: "Route Kits", subtitle: "Pick a ready walk shape, then edit it like any custom quest.") {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 12) {
+                    ForEach(store.routeKits) { kit in
+                        RouteKitCard(kit: kit) { store.createQuest(from: kit) }
+                    }
+                }
+                .padding(.vertical, 4)
+            }
+        }
+    }
+
     private var starterSection: some View {
         QuestSection(title: "Starter Quests", subtitle: "Local starter content for a short familiar walk.") {
             ForEach(store.quests.filter(\.isStarter)) { quest in
-                QuestShelfCard(quest: quest) { selectedQuestID = quest.id }
+                QuestShelfCard(quest: quest, onOpen: { selectedQuestID = quest.id }, onCopy: { store.copyQuest(quest) })
             }
         }
     }
@@ -56,7 +75,7 @@ struct QuestPickerView: View {
                     .chalkCard()
             } else {
                 ForEach(store.customQuests) { quest in
-                    QuestShelfCard(quest: quest) { selectedQuestID = quest.id }
+                    QuestShelfCard(quest: quest, onOpen: { selectedQuestID = quest.id }, onCopy: { store.copyQuest(quest) })
                 }
             }
         }
@@ -113,28 +132,66 @@ private struct QuestSection<Content: View>: View {
     }
 }
 
-private struct QuestShelfCard: View {
-    let quest: SidewalkQuest
-    let action: () -> Void
+private struct RouteKitCard: View {
+    let kit: RouteKit
+    let onCreate: () -> Void
 
     var body: some View {
-        Button(action: action) {
-            HStack(alignment: .top, spacing: 14) {
-                Image(systemName: quest.isStarter ? "figure.walk.circle.fill" : "pencil.and.list.clipboard")
-                    .font(.title)
-                    .foregroundStyle(quest.isStarter ? SafariStyle.chalkBlue : SafariStyle.chalkAmber)
-                VStack(alignment: .leading, spacing: 6) {
-                    Text(quest.title).font(.headline)
-                    Text(quest.routeHint).font(.subheadline).foregroundStyle(.secondary)
-                    ProgressBeads(completed: quest.completedClueCount, total: quest.clueTiles.count)
-                }
-                Spacer()
-                Image(systemName: "chevron.right").foregroundStyle(.secondary)
-            }
-            .chalkCard()
+        VStack(alignment: .leading, spacing: 10) {
+            Image(systemName: kit.symbolName)
+                .font(.title2.weight(.semibold))
+                .foregroundStyle(SafariStyle.chalkBlue)
+            Text(kit.title).font(.headline)
+            Text(kit.subtitle)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+            Button("Use Route Kit", systemImage: "plus.circle.fill", action: onCreate)
+                .buttonStyle(.borderedProminent)
+                .controlSize(.small)
         }
-        .buttonStyle(.plain)
-        .accessibilityLabel("Open \(quest.title) sidewalk quest")
+        .frame(width: 190, alignment: .leading)
+        .chalkCard()
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Use Route Kit, \(kit.title). \(kit.subtitle)")
+    }
+}
+
+private struct QuestShelfCard: View {
+    let quest: SidewalkQuest
+    let onOpen: () -> Void
+    let onCopy: () -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Button(action: onOpen) {
+                HStack(alignment: .top, spacing: 14) {
+                    Image(systemName: quest.isStarter ? "figure.walk.circle.fill" : "pencil.and.list.clipboard")
+                        .font(.title)
+                        .foregroundStyle(quest.isStarter ? SafariStyle.chalkBlue : SafariStyle.chalkAmber)
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(quest.title).font(.headline)
+                        Text(quest.routeHint).font(.subheadline).foregroundStyle(.secondary)
+                        ProgressBeads(completed: quest.completedClueCount, total: quest.clueTiles.count)
+                    }
+                    Spacer()
+                    Image(systemName: "chevron.right").foregroundStyle(.secondary)
+                }
+            }
+            .buttonStyle(.plain)
+            HStack {
+                Button("Copy Quest", systemImage: "doc.on.doc", action: onCopy)
+                    .buttonStyle(.bordered)
+                    .controlSize(.small)
+                Spacer()
+                Text(quest.isStarter ? "starter" : "editable")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .chalkCard()
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel("Open or copy \(quest.title) sidewalk quest")
     }
 }
 

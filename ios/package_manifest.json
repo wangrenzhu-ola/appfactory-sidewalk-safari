@@ -5,9 +5,22 @@
   "locale_lock": "en-US",
   "platform": "native_iOS_swiftui",
   "minimum_ios": "17.0",
-  "required_skill_refs": ["build-ios-apps", "test-xcode", "swiftui-ui-patterns", "swiftui-view-refactor", "taste-skill"],
+  "required_skill_refs": [
+    "build-ios-apps",
+    "test-xcode",
+    "swiftui-ui-patterns",
+    "swiftui-view-refactor",
+    "taste-skill"
+  ],
   "sample_data_only": false,
   "static_ui_only": false,
   "implemented_with_real_interaction": true,
-  "persistence_implemented": true
+  "persistence_implemented": true,
+  "app_version": "1.1.0",
+  "next_version_plan_ref": "docs/next-version-v1.1-route-kits.md",
+  "implemented_v1_1_features": [
+    "route_kits",
+    "copy_quest",
+    "walk_recap"
+  ]
 }
