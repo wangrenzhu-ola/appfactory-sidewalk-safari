@@ -85,7 +85,7 @@ private struct OnboardingCard: View {
             Text("Choose a starter quest, edit clue tiles, save Find Moments, and keep the Safari Log local on this device.")
                 .font(.body)
                 .foregroundStyle(.secondary)
-            Label("Local starter content — no live community cache, no child tracking, no AI service.", systemImage: "lock.shield")
+            Label("No accounts, uploads, child tracking, or AI-generated clues.", systemImage: "lock.shield")
                 .font(.footnote.weight(.semibold))
                 .foregroundStyle(SafariStyle.chalkGreen)
         }
