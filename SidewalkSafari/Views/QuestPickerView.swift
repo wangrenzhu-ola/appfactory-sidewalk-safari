@@ -31,12 +31,6 @@ struct QuestPickerView: View {
         }
         .background(SafariStyle.sidewalk.opacity(0.28))
         .navigationTitle("Sidewalk Safari")
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button("Fresh Install") { store.resetForFreshInstall() }
-                    .accessibilityLabel("Show empty Quest Picker state")
-            }
-        }
         .sheet(isPresented: $isShowingCreateQuest) {
             NavigationStack { CreateQuestView() }
         }
