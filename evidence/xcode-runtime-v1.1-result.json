@@ -1,0 +1,20 @@
+{
+  "schema_version": "appfactory.xcode_runtime_result.v1",
+  "version": "1.1.0",
+  "command": "xcrun simctl install + launch",
+  "exit_code": 0,
+  "simulator": {
+    "name": "iPhone 17",
+    "udid": "BBB7317F-76C6-4BD5-BF4B-EF6ABAEBA1F8"
+  },
+  "app_bundle_ref": "/Users/wangrenzhu/work/sidewalk-safari-ios/build/DerivedData-v1.1/Build/Products/Debug-iphonesimulator/SidewalkSafari.app",
+  "bundle_id": "com.appfactory.sidewalksafari",
+  "install_log_ref": "/Users/wangrenzhu/work/sidewalk-safari-ios/evidence/simctl-install-v1.1.log",
+  "launch_log_ref": "/Users/wangrenzhu/work/sidewalk-safari-ios/evidence/simctl-launch-v1.1.log",
+  "screenshot_ref": "/Users/wangrenzhu/work/sidewalk-safari-ios/evidence/sidewalk-safari-v1.1-launch.png",
+  "runtime_markers": [
+    "xcodebuild test passed",
+    "simulator install attempted",
+    "simulator launch attempted"
+  ]
+}

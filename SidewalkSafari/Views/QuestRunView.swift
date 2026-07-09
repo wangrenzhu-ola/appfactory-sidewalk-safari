@@ -16,6 +16,7 @@ struct QuestRunView: View {
             VStack(alignment: .leading, spacing: 18) {
                 if let quest {
                     QuestRunHeader(quest: quest)
+                    WalkRecapCard(recap: store.walkRecap(for: quest))
                     ForEach(quest.clueTiles.sorted { $0.order < $1.order }) { clue in
                         ClueTileCard(
                             clue: clue,
@@ -77,6 +78,43 @@ private struct QuestRunHeader: View {
             ProgressBeads(completed: quest.completedClueCount, total: quest.clueTiles.count)
         }
         .chalkCard()
+    }
+}
+
+private struct WalkRecapCard: View {
+    let recap: WalkRecap
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Label("Walk Recap", systemImage: "list.bullet.clipboard")
+                .font(.headline)
+                .foregroundStyle(SafariStyle.chalkBlue)
+            HStack(spacing: 14) {
+                RecapMetric(value: "\(recap.completedClues)/\(recap.totalClues)", label: "clues")
+                RecapMetric(value: "\(recap.skippedClues)", label: "skipped")
+                RecapMetric(value: "\(recap.findMoments)", label: "moments")
+                RecapMetric(value: "\(recap.replayCount)", label: "replays")
+            }
+            Text(recap.nextStep)
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+        }
+        .chalkCard()
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Walk Recap. \(recap.summaryLine). \(recap.nextStep)")
+    }
+}
+
+private struct RecapMetric: View {
+    let value: String
+    let label: String
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text(value).font(.headline.monospacedDigit())
+            Text(label).font(.caption).foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

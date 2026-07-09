@@ -24,7 +24,7 @@ struct SafariLogView: View {
                     ForEach(loggedQuests) { quest in
                         SafariLogRow(
                             quest: quest,
-                            momentCount: momentCount(for: quest),
+                            recap: store.walkRecap(for: quest),
                             onReplay: { replay(quest) },
                             onDelete: { requestDelete(quest) }
                         )
@@ -58,10 +58,6 @@ struct SafariLogView: View {
         store.quests.filter { quest in
             quest.completedClueCount > 0 || store.moments.contains(where: { $0.questId == quest.id })
         }
-    }
-
-    private func momentCount(for quest: SidewalkQuest) -> Int {
-        store.moments.filter { $0.questId == quest.id }.count
     }
 
     private func replay(_ quest: SidewalkQuest) {
@@ -102,16 +98,19 @@ private struct BadgeStrip: View {
 
 private struct SafariLogRow: View {
     let quest: SidewalkQuest
-    let momentCount: Int
+    let recap: WalkRecap
     let onReplay: () -> Void
     let onDelete: () -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(quest.title).font(.headline)
-            Text("\(quest.completedClueCount) clue tiles complete • \(momentCount) Find Moments")
+            Text(recap.summaryLine)
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
+            Text(recap.nextStep)
+                .font(.caption)
+                .foregroundStyle(SafariStyle.chalkGreen)
             HStack {
                 Button("Replay", systemImage: "arrow.clockwise", action: onReplay)
                 Button("Delete", systemImage: "trash", role: .destructive, action: onDelete)
@@ -119,6 +118,6 @@ private struct SafariLogRow: View {
             .buttonStyle(.bordered)
         }
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("Safari Log entry for \(quest.title), \(quest.completedClueCount) clue tiles complete")
+        .accessibilityLabel("Safari Log entry for \(quest.title). \(recap.summaryLine).")
     }
 }

@@ -1,0 +1,25 @@
+{
+  "schema_version": "sidewalk_safari.v1_1_static_scan.v1",
+  "version": "1.1.0",
+  "non_en_us_swift_source_candidates": [],
+  "feature_markers": {
+    "route_kits": [
+      "School Walk",
+      "Bus Stop",
+      "Park Gate",
+      "Errand Loop"
+    ],
+    "copy_quest": "Copy Quest",
+    "walk_recap": "Walk Recap"
+  },
+  "non_goals_preserved": [
+    "no map",
+    "no GPS",
+    "no community cache",
+    "no upload",
+    "no child tracking",
+    "no backend account",
+    "no AI clue generation",
+    "no new dependency"
+  ]
+}

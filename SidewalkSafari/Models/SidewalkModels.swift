@@ -51,6 +51,30 @@ struct BadgeProgress: Identifiable, Codable, Equatable {
     var replayCount: Int
 }
 
+
+struct RouteKit: Identifiable, Equatable {
+    var id: String
+    var title: String
+    var subtitle: String
+    var routeHint: String
+    var theme: SafariTheme
+    var cluePrompts: [String]
+    var symbolName: String
+}
+
+struct WalkRecap: Equatable {
+    var completedClues: Int
+    var skippedClues: Int
+    var totalClues: Int
+    var findMoments: Int
+    var replayCount: Int
+    var nextStep: String
+
+    var summaryLine: String {
+        "\(completedClues) completed • \(skippedClues) skipped • \(findMoments) Find Moments"
+    }
+}
+
 struct PremiumEntitlementCache: Identifiable, Codable, Equatable {
     var id: String { themePackId }
     var themePackId: String
