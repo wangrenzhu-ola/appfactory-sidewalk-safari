@@ -29,6 +29,9 @@ struct QuestPickerView: View {
             }
             .padding()
         }
+        .safeAreaInset(edge: .bottom) {
+            Color.clear.frame(height: 96)
+        }
         .background(SafariStyle.sidewalk.opacity(0.28))
         .navigationTitle("Sidewalk Safari")
         .sheet(isPresented: $isShowingCreateQuest) {
@@ -41,13 +44,10 @@ struct QuestPickerView: View {
 
     private var routeKitSection: some View {
         QuestSection(title: "Route Kits", subtitle: "Pick a ready walk shape, then edit it like any custom quest.") {
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 12) {
-                    ForEach(store.routeKits) { kit in
-                        RouteKitCard(kit: kit) { store.createQuest(from: kit) }
-                    }
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 170), spacing: 12)], spacing: 12) {
+                ForEach(store.routeKits) { kit in
+                    RouteKitCard(kit: kit) { store.createQuest(from: kit) }
                 }
-                .padding(.vertical, 4)
             }
         }
     }
@@ -140,11 +140,11 @@ private struct RouteKitCard: View {
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
-            Button("Use Route Kit", systemImage: "plus.circle.fill", action: onCreate)
+            Button("Use Kit", systemImage: "plus.circle.fill", action: onCreate)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.small)
         }
-        .frame(width: 190, alignment: .leading)
+        .frame(maxWidth: .infinity, alignment: .leading)
         .chalkCard()
         .accessibilityElement(children: .combine)
         .accessibilityLabel("Use Route Kit, \(kit.title). \(kit.subtitle)")
